@@ -3,16 +3,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import MovieList from './components/movie-list';
 import MovieListHeading from './components/movie-list-heading';
 import SearchBox from './components/search-box';
+import AddToFavourites from './components/add-to-favourites';
+import RemoveFromFavourites from './components/remove-from-favourites';
 import './App.css';
 
 const App = () => {
-
   const [movies, setMovies] = useState([]);
-	const [favourites, setFavourites] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
+  const [favourites, setFavourites] = useState([]);
 
 	const getMovieRequest = async (searchValue) => {
-		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=aeb2b829`;
+		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=5d1ed315`;
 
 		const response = await fetch(url);
 		const responseJson = await response.json();
@@ -62,7 +63,22 @@ const App = () => {
         <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}/>
       </div>
       <div className="row">
-        <MovieList movies={movies}/>
+        <MovieList 
+          movies={movies}
+          handleFavouritesClick={addFavouriteMovie}
+					favouriteComponent={AddToFavourites}
+        />
+      </div>
+
+      <div className="row align-items-center d-flex mt-4 mb-4">
+        <MovieListHeading heading="Favourites"/>
+      </div>
+      <div className="row">
+        <MovieList
+          movies={favourites}
+          handleFavouritesClick={removeFavouriteMovie}
+					favouriteComponent={RemoveFromFavourites}
+        />
       </div>
     </div>
   );

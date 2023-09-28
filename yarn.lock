@@ -4188,6 +4188,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bootstrap-icons@npm:^1.11.1":
+  version: 1.11.1
+  resolution: "bootstrap-icons@npm:1.11.1"
+  checksum: d78ff24a832fc47db0c7ba5d92d150caee6d8e9ccef24c6de5c2d9728b9610884c8ade3ecadcf09fffae207786acdf40bb026ea5b79a774a1ada62026d9fe16b
+  languageName: node
+  linkType: hard
+
 "bootstrap@npm:^5.3.2":
   version: 5.3.2
   resolution: "bootstrap@npm:5.3.2"
@@ -11160,6 +11167,7 @@ __metadata:
     "@testing-library/react": ^13.4.0
     "@testing-library/user-event": ^13.5.0
     bootstrap: ^5.3.2
+    bootstrap-icons: ^1.11.1
     react: ^18.2.0
     react-dom: ^18.2.0
     react-scripts: 5.0.1
